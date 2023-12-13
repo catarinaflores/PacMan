@@ -27,10 +27,20 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="PacMan" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.803922, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 70
 text = "Pac-Man"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Use WASD keys to control Pac-Man
+Press \"P\" to pause game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -65,4 +75,5 @@ theme_override_constants/separation = 200
 
 [connection signal="pressed" from="VBoxContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level3Button" to="." method="_on_level_3_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
