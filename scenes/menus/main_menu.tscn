@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bsbh1nl6iqw4h"]
+[gd_scene load_steps=2 format=3 uid="uid://bsbh1nl6iqw4h"]
+
+[ext_resource type="Script" path="res://scenes/menus/main_menu.gd" id="1_1jkiv"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1jkiv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -59,3 +62,6 @@ text = "Quit Button"
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 200
+
+[connection signal="pressed" from="VBoxContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level2Button" to="." method="_on_level_2_button_pressed"]
