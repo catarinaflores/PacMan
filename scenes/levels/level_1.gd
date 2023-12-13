@@ -5,6 +5,7 @@ extends Node
 @onready var siren_sound: AudioStreamPlayer = %SirenSound
 @onready var running_sound: AudioStreamPlayer = %RunningSound
 @onready var eat_sound: AudioStreamPlayer = %EatSound
+@onready var pause_menu = %PauseMenu
 
 
 func _ready() -> void:
@@ -12,7 +13,7 @@ func _ready() -> void:
 	GameManager.running_mode_ended.connect(_on_running_mode_ended)
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var layer := 0
 	var local_position := tile_map.to_local(player.global_position)
 	var tile := tile_map.local_to_map(local_position)
@@ -39,3 +40,9 @@ func _on_running_mode_entered() -> void:
 func _on_running_mode_ended() -> void:
 	siren_sound.play()
 	running_sound.stop()
+
+
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = true
+		pause_menu.show()

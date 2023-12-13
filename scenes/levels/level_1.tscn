@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvpd8f5hxkg0s"]
+[gd_scene load_steps=14 format=3 uid="uid://cvpd8f5hxkg0s"]
 
 [ext_resource type="Texture2D" uid="uid://cu72hytvs5ju6" path="res://assets/tilemaps/spritesheet.png" id="1_dgn1x"]
 [ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="1_ha443"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://58rsc7aoens2" path="res://assets/sounds/pacman_power_pellet.wav" id="7_0yye4"]
 [ext_resource type="AudioStream" uid="uid://b272kh8eepr5t" path="res://assets/sounds/pacman_waka_waka.wav" id="8_ybgdu"]
 [ext_resource type="PackedScene" uid="uid://diney7t1dijel" path="res://scenes/hud/hud.tscn" id="9_tyttu"]
+[ext_resource type="PackedScene" uid="uid://c2xwdcnui8g7u" path="res://scenes/menus/pause_menu.tscn" id="10_evf4v"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mruwj"]
 tile_data = PackedInt32Array(0, 393216, 10, 65536, 393216, 13, 131072, 393216, 13, 196608, 393216, 12, 1, 458752, 13, 196609, 458752, 13, 2, 458752, 13, 196610, 458752, 13, 3, 458752, 10, 65539, 589824, 12, 196611, 458752, 13, 4, 458752, 13, 196612, 458752, 13, 5, 458752, 13, 196613, 458752, 13, 6, 524288, 10, 65542, 393216, 13, 131078, 393216, 13, 196614, 524288, 12)
@@ -1381,3 +1382,7 @@ unique_name_in_owner = true
 stream = ExtResource("8_ybgdu")
 
 [node name="HUD" parent="." instance=ExtResource("9_tyttu")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_evf4v")]
+unique_name_in_owner = true
+visible = false
